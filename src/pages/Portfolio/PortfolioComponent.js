@@ -1,4 +1,5 @@
 import React from 'react'
+import { Switch, Route, Link } from 'react-router-dom'
 import {
   Button, Nav, Row, Tab, Col,
 } from 'react-bootstrap'
@@ -8,6 +9,7 @@ import { Wrapper, FormInput } from '../../components'
 import { utilAPI } from '../../utils'
 import tabs from './tabs'
 
+const path = 'portfolio'
 class PortfolioComponent extends React.Component {
   state = {
     selectedTab: 'AframeCharts',
@@ -16,7 +18,7 @@ class PortfolioComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect,
+        isLoading, redirectPath, shouldRedirect, match: { url },
       },
       state: { selectedTab },
     } = this
@@ -46,9 +48,18 @@ class PortfolioComponent extends React.Component {
                 <h2>Technologies and Frameworks</h2>
                 {
                   Object.keys(tabs).map(key => (
-                    <Nav.Item key={key}>
-                      <Nav.Link eventKey={key}>{key}</Nav.Link>
-                    </Nav.Item>
+                    <Link
+                      to={`${url}/${key}`}
+                      style={{ padding: 20 }}
+                      key={key}
+                    >
+                      <Button
+                        block
+                      >
+                        {key}
+                      </Button>
+                    </Link>
+
                   ))
                 }
                 <h2>My Sites</h2>
@@ -64,20 +75,21 @@ class PortfolioComponent extends React.Component {
               className="h-100 mh-100"
             >
               <Tab.Content className="h-100 mh-100">
-                {
+                <Switch>
+                  {
                   Object.keys(tabs).map((key) => {
                     const { Component } = tabs[key]
                     return (
-                      <Tab.Pane
+                      <Route
                         key={key}
-                        eventKey={key}
-                        className="h-100 mh-100"
-                      >
-                        <Component />
-                      </Tab.Pane>
+                        exact
+                        path={`${url}/${key}`}
+                        component={Component}
+                      />
                     )
                   })
                 }
+                </Switch>
               </Tab.Content>
             </Col>
           </Row>

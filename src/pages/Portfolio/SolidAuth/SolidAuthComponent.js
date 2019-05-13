@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { LoggedIn, LoggedOut } from '@solid/react'
 import { Wrapper, FormInput } from '../../../components'
 import { utilAPI } from '../../../utils'
+import Profile from './profile'
 
 class SolidAuthComponent extends React.Component {
   render() {
@@ -34,14 +35,16 @@ class SolidAuthComponent extends React.Component {
     if (userData) {
       return (
         <div>
-          {
+          {/* {
           Object.keys(userData).map(key => (
             <div>
               <span>{key}</span>
-              <span>{userData[key]}</span>
+              <span>{JSON.stringify(userData[key])}</span>
             </div>
           ))
-        }
+        } */}
+          <Profile webId={userData.webId} />
+
           <Button onClick={signout}>
           Signout
           </Button>

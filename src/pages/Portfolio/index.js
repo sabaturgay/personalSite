@@ -15,12 +15,13 @@ class Porfolio extends React.Component {
 
   render() {
     const {
-      props: { store: { user } },
+      props: { store: { user }, match },
     } = this
     return (
       <PorfolioComponent
         {...this.state}
         user={user}
+        match={match}
       />
     )
   }

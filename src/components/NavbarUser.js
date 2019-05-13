@@ -93,6 +93,8 @@ NavbarUser.propTypes = {
 }
 
 NavbarUser.defaultProps = {
+  navItems: [],
+  navButtons: [],
 }
 
 

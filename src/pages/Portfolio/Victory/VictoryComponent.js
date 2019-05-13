@@ -179,7 +179,7 @@ class VictoryComponent extends React.Component {
         !dynamic ? this.makeDynamic() : this.stopDynamic()
       }}
       >
-        {dynamic ? 'Make Dynamic' : 'Stop'}
+        {!dynamic ? 'Make Dynamic' : 'Stop'}
       </Button>
     </div>
   )
