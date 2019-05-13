@@ -15,9 +15,9 @@ export default {
   C3: {
     Component: C3,
   },
-  FlexMonster: {
-    Component: FlexMonster,
-  },
+  // FlexMonster: {
+  //   Component: FlexMonster,
+  // },
   ForceGraph: {
     Component: ForceGraph,
   },

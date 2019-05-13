@@ -2,13 +2,15 @@ import React from 'react'
 import { Button, Tabs, Tab } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import {
-  VictoryChart, VictoryAxis, VictoryBar, VictoryStack, VictoryTheme,
+  VictoryChart, VictoryAxis, VictoryBar, VictoryStack, VictoryTheme, VictoryPolarAxis,
 } from 'victory'
 import math from 'mathjs'
 
 import { Wrapper, FormInput } from '../../../components'
 import { utilAPI } from '../../../utils'
+import theme from './theme'
 
+const style = { parent: { maxWidth: '60%' } }
 
 class VictoryComponent extends React.Component {
   constructor(props) {
@@ -33,7 +35,9 @@ class VictoryComponent extends React.Component {
 
   getData = () => {
     const bars = math.random(6, 10)
-    return math.range(bars).map(bar => ({ x: bar + 1, y: math.random(2, 10) }))
+    const result = math.range(0, bars).map(bar => ({ x: bar + 1, y: math.random(2, 10) }))
+    console.log(result)
+    return result._data
   }
 
   render() {
@@ -50,23 +54,28 @@ class VictoryComponent extends React.Component {
           defaultActiveKey="simple"
         >
           <Tab
-            eventKey="home"
-            title="Home"
+            eventKey="simple"
+            title="Simple"
           >
             {this._renderSimpleChart()}
           </Tab>
           <Tab
-            eventKey="profile"
-            title="Profile"
+            eventKey="advanced"
+            title="Advanced"
           >
             {this._renderAdvancedChart()}
           </Tab>
           <Tab
-            eventKey="contact"
-            title="Contact"
-            disabled
+            eventKey="animated"
+            title="Animated"
           >
             {this._renderAnimationChart()}
+          </Tab>
+          <Tab
+            eventKey="polar"
+            title="Polar Chart"
+          >
+            {this._renderPolarChart()}
           </Tab>
         </Tabs>
 
@@ -78,7 +87,8 @@ class VictoryComponent extends React.Component {
   _renderSimpleChart = () => (
     <VictoryChart
       domainPadding={20}
-      theme={VictoryTheme.material}
+      theme={theme}
+      style={style}
     >
       <VictoryAxis
         tickValues={[1, 2, 3, 4]}
@@ -99,7 +109,8 @@ class VictoryComponent extends React.Component {
   _renderAdvancedChart = () => (
     <VictoryChart
       domainPadding={20}
-      theme={VictoryTheme.material}
+      theme={theme}
+      style={style}
     >
       <VictoryAxis
         tickValues={[1, 2, 3, 4]}
@@ -136,8 +147,10 @@ class VictoryComponent extends React.Component {
 
   _renderAnimationChart = () => (
     <VictoryChart
+      theme={theme}
       domainPadding={{ x: 20 }}
       animate={{ duration: 500 }}
+      style={style}
     >
       <VictoryBar
         data={this.state.data}
@@ -154,6 +167,33 @@ class VictoryComponent extends React.Component {
             }),
           },
         }}
+      />
+    </VictoryChart>
+  )
+
+  _renderPolarChart = () => (
+    <VictoryChart
+      polar
+      theme={theme}
+      innerRadius={50}
+      style={style}
+    >
+      <VictoryPolarAxis />
+      <VictoryPolarAxis
+        dependentAxis
+        tickValues={[1, 3, 5]}
+        axisAngle={40}
+      />
+      <VictoryBar
+        data={[
+          { x: 0, y: 2 },
+          { x: 60, y: 3 },
+          { x: 120, y: 5 },
+          { x: 180, y: 4 },
+          { x: 240, y: 4 },
+          { x: 300, y: 4 },
+        ]}
+        style={{ data: { fill: '#c43a31', width: 30 } }}
       />
     </VictoryChart>
   )

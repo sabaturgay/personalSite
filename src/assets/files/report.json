@@ -1,0 +1,132 @@
+{
+    "dataSource": {
+        "dataSourceType": "csv",
+        "filename": "https://cdn.flexmonster.com/data/data.csv"
+    },
+    "slice": {
+        "rows": [
+            {
+                "uniqueName": "Destination",
+                "sort": "asc"
+            },
+            {
+                "uniqueName": "Color",
+                "sort": "asc"
+            },
+            {
+                "uniqueName": "[Measures]"
+            }
+        ],
+        "columns": [
+            {
+                "uniqueName": "Category",
+                "sort": "asc"
+            },
+            {
+                "uniqueName": "Country",
+                "sort": "asc"
+            }
+        ],
+        "measures": [
+            {
+                "uniqueName": "Price",
+                "aggregation": "sum",
+                "active": true
+            },
+            {
+                "uniqueName": "Discount",
+                "aggregation": "sum",
+                "active": true
+            },
+            {
+                "uniqueName": "Quantity",
+                "aggregation": "sum",
+                "active": true
+            }
+        ],
+        "expands": {
+            "expandAll": false,
+            "rows": [
+                {
+                    "tuple": [
+                        "destination.[france]"
+                    ]
+                }
+            ],
+            "columns": [
+                {
+                    "tuple": [
+                        "category.[accessories]"
+                    ]
+                }
+            ]
+        },
+        "drills": {
+            "drillAll": false
+        }
+    },
+    "options": {
+        "viewType": "grid",
+        "grid": {
+            "type": "compact",
+            "title": "",
+            "showFilter": true,
+            "showHeaders": true,
+            "fitGridlines": false,
+            "showTotals": true,
+            "showGrandTotals": "on",
+            "showExtraTotalLabels": false,
+            "showHierarchies": true,
+            "showHierarchyCaptions": true,
+            "showReportFiltersArea": true,
+            "pagesFilterLayout": "horizontal"
+        },
+        "chart": {
+            "type": "line",
+            "title": "",
+            "showFilter": true,
+            "labelsHierarchy": "",
+            "multipleMeasures": false,
+            "oneLevel": false,
+            "autoRange": false,
+            "reversedAxes": false,
+            "showLegendButton": false,
+            "showAllLabels": false,
+            "showMeasures": true,
+            "showOneMeasureSelection": true,
+            "showWarning": true,
+            "activeMeasure": ""
+        },
+        "configuratorActive": false,
+        "configuratorButton": true,
+        "configuratorMatchHeight": false,
+        "showAggregations": true,
+        "showCalculatedValuesButton": true,
+        "editing": false,
+        "drillThrough": true,
+        "showDrillThroughConfigurator": true,
+        "sorting": "on",
+        "datePattern": "dd/MM/yyyy",
+        "dateTimePattern": "dd/MM/yyyy HH:mm:ss",
+        "saveAllFormats": false,
+        "showDefaultSlice": true,
+        "showEmptyData": false,
+        "defaultHierarchySortName": "asc",
+        "selectEmptyCells": true,
+        "showOutdatedDataAlert": false
+    },
+    "formats": [
+        {
+            "name": "",
+            "thousandsSeparator": " ",
+            "decimalSeparator": ".",
+            "decimalPlaces": 2,
+            "maxSymbols": 20,
+            "currencySymbol": "",
+            "currencySymbolAlign": "left",
+            "nullValue": " ",
+            "infinityValue": "Infinity",
+            "divideByZeroValue": "Infinity"
+        }
+    ]
+}

@@ -14,6 +14,7 @@ class PortfolioComponent extends React.Component {
       props: {
         isLoading, redirectPath, shouldRedirect,
       },
+      state: { selectedTab },
     } = this
 
     return (
@@ -25,6 +26,7 @@ class PortfolioComponent extends React.Component {
         <Tab.Container
           id="left-tabs-example"
           defaultActiveKey="Victory"
+          onSelect={(key) => { this.setState({ selectedTab: key }) }}
         >
           <Row className="h-100 mh-100">
 
@@ -39,7 +41,7 @@ class PortfolioComponent extends React.Component {
               >
                 {
                   Object.keys(tabs).map(key => (
-                    <Nav.Item>
+                    <Nav.Item key={key}>
                       <Nav.Link eventKey={key}>{key}</Nav.Link>
                     </Nav.Item>
                   ))
@@ -54,8 +56,20 @@ class PortfolioComponent extends React.Component {
                 {
                   Object.keys(tabs).map((key) => {
                     const { Component } = tabs[key]
+                    if (key === 'Victory') {
+                      return selectedTab === 'Victory' ? (
+                        <Tab.Pane
+                          key={key}
+                          eventKey={key}
+                          className="h-100 mh-100"
+                        >
+                          <Component />
+                        </Tab.Pane>
+                      ) : null
+                    }
                     return (
                       <Tab.Pane
+                        key={key}
                         eventKey={key}
                         className="h-100 mh-100"
                       >
