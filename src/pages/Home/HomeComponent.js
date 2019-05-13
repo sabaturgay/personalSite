@@ -16,19 +16,12 @@ class HomeComponent extends React.Component {
     } = this
 
     return (
-      <Wrapper isLoading={isLoading}>
-        <Button
-          variant="primary"
-          onClick={utilAPI.changeState(this, { shouldRedirect: true })}
-        >
-          Profile
-        </Button>
-        <Button
-          variant="secondary"
-          onClick={authAPI.signout}
-        >
-          Signout
-        </Button>
+      <Wrapper
+        isLoading={isLoading}
+        backgroundImage="/charts.jpg"
+        blurRate={1.5}
+      >
+
         {utilAPI.redirect(redirectPath, shouldRedirect)}
       </Wrapper>
     )

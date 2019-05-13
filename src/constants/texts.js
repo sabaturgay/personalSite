@@ -1,6 +1,6 @@
 const texts = {
-  APP_NAME: 'ExampleReactApp',
-  FOOTER_TEXT: '© 2018 Copyright:',
+  APP_NAME: 'turgaysaba',
+  FOOTER_TEXT: '© 2019 Copyright:',
 }
 
 export default texts

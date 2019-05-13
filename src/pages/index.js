@@ -7,7 +7,7 @@ import {
 import Signin from './Signin'
 import Home from './Home/index'
 import Profile from './Profile'
-
+import Portfolio from './Portfolio'
 import {
   PrivateRoute, NonUserRoute, NavbarDefault, NavbarUser, Footer,
 } from '../components'
@@ -19,7 +19,7 @@ class BaseRoute extends React.Component {
   render() {
     const { store: { user } } = this.props
     const {
-      SIGNIN, HOME, PROFILE, GALLERY,
+      SIGNIN, HOME, PROFILE, PORTFOLIO,
     } = routePaths
     return (
       <Router>
@@ -30,14 +30,14 @@ class BaseRoute extends React.Component {
             ? (
               <NavbarUser
                 user={user}
-                navItems={[{ name: 'Home', path: HOME }, { name: 'Gallery', path: GALLERY }]}
-                navButtons={[{ name: 'Signout', onClick: authAPI.signout }]}
+                navItems={[{ name: 'Home', path: HOME }, { name: 'Portfolio', path: PORTFOLIO }]}
+                navButtons={[{ name: 'Portfolio', path: PORTFOLIO }]}
               />
             )
             : (
               <NavbarDefault
                 appName={texts.APP_NAME}
-                navItems={[{ name: 'Home', path: HOME }, { name: 'Signin', path: SIGNIN }]}
+                navItems={[{ name: 'Home', path: HOME }, { name: 'Portfolio', path: PORTFOLIO }]}
               />
             )
         }
@@ -57,15 +57,20 @@ class BaseRoute extends React.Component {
               path={PROFILE}
               component={Profile}
             />
+            <PrivateRoute
+              exact
+              path={PORTFOLIO}
+              component={Portfolio}
+            />
             <Redirect
           // from="/"
               to={user ? HOME : SIGNIN}
             />
           </Switch>
-          <Footer
+          {/* <Footer
             appName={texts.APP_NAME}
             footerText={texts.FOOTER_TEXT}
-          />
+          /> */}
         </div>
       </Router>
     )

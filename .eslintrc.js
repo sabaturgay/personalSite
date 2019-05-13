@@ -29,7 +29,7 @@ module.exports = {
 		"no-return-await": 0,
 		"react/jsx-filename-extension": 0,
 		"no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^React" }],
-		"class-methods-use-this": ["error", { "exceptMethods": ["render"] }],
+		"class-methods-use-this": ["error", { "exceptMethods": ["render", "componentDidMount"] }],
 		"no-underscore-dangle": 0,
 		"react/prefer-stateless-function": 0,
 		"jsx-a11y/label-has-for": 0,

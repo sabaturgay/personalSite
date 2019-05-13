@@ -19,7 +19,7 @@ class Wrapper extends React.Component {
         isLoading, progress,
         loadingText, children,
         backgroundImage,
-        style, type,
+        style, type, blurRate,
       },
     } = this
     return (
@@ -44,7 +44,7 @@ class Wrapper extends React.Component {
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'cover',
-                  filter: 'blur(5px)',
+                  filter: `blur(${blurRate}px)`,
                   position: 'absolute',
                 }}
               />
@@ -62,6 +62,7 @@ Wrapper.propTypes = {
   loadingText: PropTypes.string,
   style: PropTypes.object,
   type: PropTypes.number,
+  blurRate: PropTypes.number,
 }
 
 Wrapper.defaultProps = {
@@ -70,6 +71,7 @@ Wrapper.defaultProps = {
   loadingText: null,
   style: {},
   type: WRAPPER_TYPES.PAGE,
+  blurRate: 5,
 }
 
 export default Wrapper
