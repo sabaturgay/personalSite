@@ -20,7 +20,8 @@ class VictoryComponent extends React.Component {
     }
   }
 
-  componentDidMount() {
+
+  makeDynamic = () => {
     this.setStateInterval = window.setInterval(() => {
       this.setState({
         data: this.getData(),
@@ -28,8 +29,7 @@ class VictoryComponent extends React.Component {
     }, 3000)
   }
 
-
-  componentWillUnmount() {
+  stopDynamic = () => {
     window.clearInterval(this.setStateInterval)
   }
 
@@ -44,6 +44,9 @@ class VictoryComponent extends React.Component {
     const {
       props: {
         isLoading, redirectPath, shouldRedirect, onClick,
+      },
+      state: {
+        dynamic,
       },
     } = this
 
@@ -69,7 +72,7 @@ class VictoryComponent extends React.Component {
             eventKey="animated"
             title="Animated"
           >
-            {this._renderAnimationChart()}
+            {this._renderAnimationChart(dynamic)}
           </Tab>
           <Tab
             eventKey="polar"
@@ -145,30 +148,40 @@ class VictoryComponent extends React.Component {
     </VictoryChart>
   )
 
-  _renderAnimationChart = () => (
-    <VictoryChart
-      theme={theme}
-      domainPadding={{ x: 20 }}
-      animate={{ duration: 500 }}
-      style={style}
-    >
-      <VictoryBar
-        data={this.state.data}
-        style={{
-          data: { fill: 'tomato', width: 12 },
-        }}
-        animate={{
-          onExit: {
-            duration: 500,
-            before: () => ({
-              _y: 0,
-              fill: 'orange',
-              label: 'BYE',
-            }),
-          },
-        }}
-      />
-    </VictoryChart>
+  _renderAnimationChart = dynamic => (
+    <div>
+      <VictoryChart
+        theme={theme}
+        domainPadding={{ x: 20 }}
+        animate={{ duration: 500 }}
+        style={style}
+      >
+        <VictoryBar
+          data={this.state.data}
+          style={{
+            data: { fill: 'tomato', width: 12 },
+          }}
+          animate={{
+            onExit: {
+              duration: 500,
+              before: () => ({
+                _y: 0,
+                fill: 'orange',
+                label: 'BYE',
+              }),
+            },
+          }}
+        />
+
+      </VictoryChart>
+      <Button onClick={() => {
+        this.setState({ dynamic: !dynamic })
+        !dynamic ? this.makeDynamic() : this.stopDynamic()
+      }}
+      >
+        {dynamic ? 'Make Dynamic' : 'Stop'}
+      </Button>
+    </div>
   )
 
   _renderPolarChart = () => (

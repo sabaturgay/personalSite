@@ -31,7 +31,7 @@ class BaseRoute extends React.Component {
               <NavbarUser
                 user={user}
                 navItems={[{ name: 'Home', path: HOME }, { name: 'Portfolio', path: PORTFOLIO }]}
-                navButtons={[{ name: 'Portfolio', path: PORTFOLIO }]}
+                // navButtons={[{ name: 'Portfolio', path: PORTFOLIO }]}
               />
             )
             : (

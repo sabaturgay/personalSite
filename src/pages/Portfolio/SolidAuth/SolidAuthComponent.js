@@ -9,32 +9,54 @@ class SolidAuthComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick, signin, signout, user,
+        isLoading, redirectPath, shouldRedirect, onClick, signin, signout, userData,
       },
     } = this
 
     return (
       <Wrapper isLoading={isLoading}>
         <h2>Solid Auth</h2>
-        <LoggedOut>
-          Please Use Solid Authentication to Enter the System
-          <div>
-            <Button onClick={signin}>
-            Signin
-            </Button>
-          </div>
-        </LoggedOut>
-
-
-        <LoggedIn>
-          {JSON.stringify(user)}
-          <Button onClick={signout}>
-            Signout
-          </Button>
-        </LoggedIn>
-
+        {
+          this._renderContent(userData)
+          }
         {utilAPI.redirect(redirectPath, shouldRedirect)}
       </Wrapper>
+    )
+  }
+
+  _renderContent = () => {
+    const {
+      props: {
+        isLoading, redirectPath, shouldRedirect, onClick, signin, signout, userData,
+      },
+    } = this
+
+    if (userData) {
+      return (
+        <div>
+          {
+          Object.keys(userData).map(key => (
+            <div>
+              <span>{key}</span>
+              <span>{userData[key]}</span>
+            </div>
+          ))
+        }
+          <Button onClick={signout}>
+          Signout
+          </Button>
+        </div>
+      )
+    }
+    return (
+      <div>
+          Please Use Solid Authentication to Enter the System
+        <div>
+          <Button onClick={signin}>
+            Signin
+          </Button>
+        </div>
+      </div>
     )
   }
 }

@@ -13,6 +13,7 @@ class SolidAuth extends React.Component {
     isLoading: false,
     redirectPath: routePaths.HOME,
     shouldRedirect: false,
+    userData: null,
   }
 
   signin = async () => {
@@ -27,12 +28,13 @@ class SolidAuth extends React.Component {
 
   render() {
     const {
-      props: { store: { user }, state: { userData } },
+      props: { store: { user } }, state: { userData },
     } = this
     return (
       <SolidAuthComponent
         {...this.state}
-        user={userData}
+        user={user}
+        userData={userData}
         signin={this.signin}
         signout={this.signout}
       />

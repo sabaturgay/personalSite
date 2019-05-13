@@ -9,6 +9,10 @@ import { utilAPI } from '../../utils'
 import tabs from './tabs'
 
 class PortfolioComponent extends React.Component {
+  state = {
+    selectedTab: 'AframeCharts',
+  }
+
   render() {
     const {
       props: {
@@ -39,6 +43,7 @@ class PortfolioComponent extends React.Component {
                 variant="pills"
                 className="flex-column"
               >
+                <h2>Technologies and Frameworks</h2>
                 {
                   Object.keys(tabs).map(key => (
                     <Nav.Item key={key}>
@@ -46,6 +51,12 @@ class PortfolioComponent extends React.Component {
                     </Nav.Item>
                   ))
                 }
+                <h2>My Sites</h2>
+                <a href="https://tensorflow-memory-box.herokuapp.com/">
+                  <Button>
+                    Go My thesis project
+                  </Button>
+                </a>
               </Nav>
             </Col>
             <Col
@@ -56,17 +67,6 @@ class PortfolioComponent extends React.Component {
                 {
                   Object.keys(tabs).map((key) => {
                     const { Component } = tabs[key]
-                    if (key === 'Victory') {
-                      return selectedTab === 'Victory' ? (
-                        <Tab.Pane
-                          key={key}
-                          eventKey={key}
-                          className="h-100 mh-100"
-                        >
-                          <Component />
-                        </Tab.Pane>
-                      ) : null
-                    }
                     return (
                       <Tab.Pane
                         key={key}

@@ -6,6 +6,7 @@ import { Wrapper, FormInput } from '../../../components'
 import { utilAPI } from '../../../utils'
 
 class C3Component extends React.Component {
+
   componentDidMount() {
     const { c3, d3 } = window
     const chart = c3.generate({

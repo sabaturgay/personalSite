@@ -45,6 +45,7 @@ class RechartsComponent extends React.Component {
                 <Tab
                   eventKey={key}
                   title={key}
+                  key={key}
                 >
                   {
                     chart === key && (

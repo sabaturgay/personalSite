@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "3d-force-graph": "1.46.3",
     "@material-ui/core": "3.9.3",
     "@nivo/generators": "0.57.0",
     "@rdfjs/data-model": "1.1.1",
@@ -53,6 +54,7 @@
     "solid-auth-client": "2.3.0",
     "styled-components": "4.2.0",
     "subscriptions-transport-ws": "0.9.16",
+    "three-spritetext": "1.0.6",
     "uuid": "3.3.2",
     "victory": "32.2.2",
     "ws": "6.2.1"
