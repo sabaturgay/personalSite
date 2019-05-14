@@ -38,30 +38,35 @@ class PortfolioComponent extends React.Component {
 
             <Col
               sm={3}
-              style={{ background: 'rgb(47,47,47)' }}
+              style={{ background: 'rgb(47,47,47, 0.9)' }}
               className="h-100 mh-100"
             >
               <Nav
                 variant="pills"
                 className="flex-column"
               >
-                <h2>Technologies and Frameworks</h2>
                 {
-                  Object.keys(tabs).map(key => (
-                    <Link
-                      to={`${url}/${key}`}
-                      style={{ padding: 20 }}
-                      key={key}
-                    >
-                      <Button
-                        block
-                      >
-                        {key}
-                      </Button>
-                    </Link>
-
+                  Object.keys(tabs).map(topic => (
+                    <Col key={topic}>
+                      <h2>{topic}</h2>
+                      {Object.keys(tabs[topic]).map(key => (
+                        <Link
+                          to={`${url}/${key}`}
+                          style={{ padding: 20 }}
+                          key={key}
+                        >
+                          <Button
+                            block
+                            variant="outline-primary"
+                          >
+                            {key}
+                          </Button>
+                        </Link>
+                      ))}
+                    </Col>
                   ))
                 }
+
                 <h2>My Sites</h2>
                 <a
                   href="https://tensorflow-memory-box.herokuapp.com/"
@@ -81,8 +86,8 @@ class PortfolioComponent extends React.Component {
               <Tab.Content className="h-100 mh-100">
                 <Switch>
                   {
-                  Object.keys(tabs).map((key) => {
-                    const { Component } = tabs[key]
+                  Object.keys(tabs).map(topic => Object.keys(tabs[topic]).map((key) => {
+                    const { Component } = tabs[topic][key]
                     return (
                       <Route
                         key={key}
@@ -91,7 +96,7 @@ class PortfolioComponent extends React.Component {
                         component={Component}
                       />
                     )
-                  })
+                  }))
                 }
                 </Switch>
               </Tab.Content>

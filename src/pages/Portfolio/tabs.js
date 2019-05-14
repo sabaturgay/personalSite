@@ -7,33 +7,42 @@ import Recharts from './Recharts'
 import SolidAuth from './SolidAuth'
 import Victory from './Victory'
 import WebDataRocks from './WebDataRocks'
+import FirebaseAuth from './FirebaseAuth'
 
 export default {
-  AframeCharts: {
-    Component: AframeCharts,
+  DataVisualization: {
+    C3: {
+      Component: C3,
+    },
+    // FlexMonster: {
+    //   Component: FlexMonster,
+    // },
+    Nivo: {
+      Component: Nivo,
+    },
+    WebDataRocks: {
+      Component: WebDataRocks,
+    },
+    Victory: {
+      Component: Victory,
+    },
+    Recharts: {
+      Component: Recharts,
+    },
+    ForceGraph: {
+      Component: ForceGraph,
+    },
+    AframeCharts: {
+      Component: AframeCharts,
+    },
   },
-  C3: {
-    Component: C3,
+  Authentication: {
+    SolidAuth: {
+      Component: SolidAuth,
+    },
+    FirebaseAuth: {
+      Component: FirebaseAuth,
+    },
   },
-  // FlexMonster: {
-  //   Component: FlexMonster,
-  // },
-  ForceGraph: {
-    Component: ForceGraph,
-  },
-  Nivo: {
-    Component: Nivo,
-  },
-  Recharts: {
-    Component: Recharts,
-  },
-  SolidAuth: {
-    Component: SolidAuth,
-  },
-  Victory: {
-    Component: Victory,
-  },
-  WebDataRocks: {
-    Component: WebDataRocks,
-  },
+
 }

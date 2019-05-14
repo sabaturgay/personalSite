@@ -2,6 +2,10 @@
   "name": "exampleReact",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.15.0",
+    "yarn": "1.13.0"
+  },
   "dependencies": {
     "3d-force-graph": "1.46.3",
     "@material-ui/core": "3.9.3",

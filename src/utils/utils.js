@@ -159,7 +159,34 @@ const utils = {
       resolve(results)
     })
   }),
-
+  reduceImageSize: (file, SIZE) => new Promise(async (res, rej) => {
+    const blobUrl = file.objectURL
+    const image = new Image()
+    image.crossOrigin = 'anonymous'
+    image.src = blobUrl
+    image.onload = async () => {
+      const WIDTH = SIZE
+      const { width, height } = image
+      if (width <= WIDTH) {
+        res(file)
+      }
+      const scaleFactor = WIDTH / width
+      // reduce image size
+      const canvas = document.createElement('canvas')
+      canvas.width = WIDTH
+      canvas.height = height * scaleFactor
+      const context = canvas.getContext('2d')
+      context.drawImage(image, 0, 0, canvas.width, canvas.height)
+      // context.scale(scale, scale)
+      context.canvas.toBlob((blob) => {
+        const reducedSizeFile = new File([blob], 'x.png', {
+          type: 'image/jpeg',
+          lastModified: Date.now(),
+        })
+        res(reducedSizeFile)
+      }, 'image/png', 1)
+    }
+  })
 }
 
 export default utils
