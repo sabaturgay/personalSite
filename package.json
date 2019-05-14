@@ -74,7 +74,7 @@
     "setup": "yarn addEslintPackages && yarn addReactPackages && yarn addApolloPackages && yarn add addStoryBookPackages && yarn dev",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "heroku-postbuild": "yarn run build"
+    // "heroku-postbuild": "yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
