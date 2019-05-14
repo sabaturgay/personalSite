@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import solidAuth from 'solid-auth-client'
 
-
 import { withWrapper } from '../../../hocs'
 import { routePaths, storeItemKeys } from '../../../constants'
 

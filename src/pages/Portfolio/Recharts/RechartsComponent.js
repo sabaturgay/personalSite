@@ -51,7 +51,7 @@ class RechartsComponent extends React.Component {
                     chart === key && (
                       <ResponsiveContainer
                         width={800}
-                        height="80%"
+                        height="100%"
                         key={key}
                       >
                         <Component />

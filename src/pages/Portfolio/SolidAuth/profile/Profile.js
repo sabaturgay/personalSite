@@ -9,7 +9,9 @@ import Image from './Image'
 
 import styles from './Profile.module.css'
 
-export default ({ webId, fullName, imageSrc }) => (
+export default ({
+  webId, fullName, imageSrc, hasPhoto,
+}) => (
   <Grid
     container
     spacing={16}
@@ -26,6 +28,7 @@ export default ({ webId, fullName, imageSrc }) => (
         name={fullName}
         src={imageSrc}
       />
+      <span>{hasPhoto}</span>
     </Grid>
     <Grid
       item

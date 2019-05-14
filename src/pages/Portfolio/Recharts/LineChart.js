@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Legend,
 } from 'recharts'
+import { Col, Row } from 'react-bootstrap'
 
 const data = [
   {
@@ -27,114 +28,136 @@ const data = [
   },
 ]
 
+const WIDTH = 320
+const HEIGHT = 320
+const colStyle = { padding: 20 }
 export default class Example extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/xqjtetw0/';
 
   render() {
     return (
-      <div>
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
+      <Row>
+        <Col
+          xs={6}
+          style={colStyle}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="name"
-            interval="preserveEnd"
-          />
-          <YAxis interval="preserveEnd" />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line
-            type="monotone"
-            dataKey="uv"
-            stroke="#82ca9d"
-          />
-        </LineChart>
+          <LineChart
+            width={WIDTH}
+            height={HEIGHT}
+            data={data}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="name"
+              interval="preserveEnd"
+            />
+            <YAxis interval="preserveEnd" />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="uv"
+              stroke="#82ca9d"
+            />
+          </LineChart>
+        </Col>
+        <Col
+          xs={6}
+          style={colStyle}
+        >
+          <LineChart
+            width={WIDTH}
+            height={HEIGHT}
+            data={data}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="name"
+              interval="preserveStart"
+            />
+            <YAxis interval="preserveStart" />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="uv"
+              stroke="#82ca9d"
+            />
+          </LineChart>
+        </Col>
 
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
+        <Col
+          xs={6}
+          style={colStyle}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="name"
-            interval="preserveStart"
-          />
-          <YAxis interval="preserveStart" />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line
-            type="monotone"
-            dataKey="uv"
-            stroke="#82ca9d"
-          />
-        </LineChart>
+          <LineChart
+            width={WIDTH}
+            height={HEIGHT}
+            data={data}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="name"
+              interval="preserveStartEnd"
+            />
+            <YAxis interval="preserveStartEnd" />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="uv"
+              stroke="#82ca9d"
+            />
+          </LineChart>
+        </Col>
+        <Col
+          xs={6}
+          style={colStyle}
+        >
+          <LineChart
+            width={WIDTH}
+            height={HEIGHT}
+            data={data}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="name"
+              interval={0}
+              angle={30}
+              dx={20}
+            />
+            <YAxis />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="uv"
+              stroke="#82ca9d"
+            />
+          </LineChart>
+        </Col>
 
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="name"
-            interval="preserveStartEnd"
-          />
-          <YAxis interval="preserveStartEnd" />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line
-            type="monotone"
-            dataKey="uv"
-            stroke="#82ca9d"
-          />
-        </LineChart>
-
-        <LineChart
-          width={200}
-          height={100}
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="name"
-            interval={0}
-            angle={30}
-            dx={20}
-          />
-          <YAxis />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line
-            type="monotone"
-            dataKey="uv"
-            stroke="#82ca9d"
-          />
-        </LineChart>
-      </div>
+      </Row>
     )
   }
 }

@@ -60,7 +60,7 @@ class PortfolioComponent extends React.Component {
                   ))
                 }
 
-                <h2>My Sites</h2>
+                <h2 style={{ paddingLeft: 20 }}>My Sites</h2>
                 <a
                   href="https://tensorflow-memory-box.herokuapp.com/"
                   target="_blank"

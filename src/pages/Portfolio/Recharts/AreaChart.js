@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts'
+import { Row } from 'react-bootstrap'
 
 export default class Example extends PureComponent {
   data = [
@@ -30,13 +31,16 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <div>
+      <Row
+        className="justify-content-center"
+        style={{ padding: 50 }}
+      >
         <AreaChart
-          width={500}
-          height={200}
+          width={600}
+          height={270}
           data={this.data}
           margin={{
-            top: 10, right: 30, left: 0, bottom: 0,
+            top: 30, right: 30, left: 0, bottom: 0,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -51,11 +55,11 @@ export default class Example extends PureComponent {
           />
         </AreaChart>
         <AreaChart
-          width={500}
-          height={200}
+          width={600}
+          height={270}
           data={this.data}
           margin={{
-            top: 10, right: 30, left: 0, bottom: 0,
+            top: 30, right: 30, left: 0, bottom: 0,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -70,7 +74,7 @@ export default class Example extends PureComponent {
             fill="#8884d8"
           />
         </AreaChart>
-      </div>
+      </Row>
     )
   }
 }

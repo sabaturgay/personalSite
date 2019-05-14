@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { PieChart, Pie, Sector } from 'recharts'
+import { Row, Col } from 'react-bootstrap'
 
 const data = [
   { name: 'Group A', value: 400 },
@@ -102,23 +103,35 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <PieChart
-        width={500}
-        height={500}
-      >
-        <Pie
-          activeIndex={this.state.activeIndex}
-          activeShape={renderActiveShape}
-          data={data}
-          cx={200}
-          cy={200}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-          onMouseEnter={this.onPieEnter}
-        />
-      </PieChart>
+      <Row>
+        {
+          Array(5).fill(0).map((val, index) => (
+            <Col
+              xs={6}
+              key={index}
+            >
+              <PieChart
+                width={500}
+                height={400}
+              >
+                <Pie
+                  activeIndex={this.state.activeIndex}
+                  activeShape={renderActiveShape}
+                  data={data}
+                  cx={200}
+                  cy={200}
+                  innerRadius={60}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                  onMouseEnter={this.onPieEnter}
+                />
+              </PieChart>
+            </Col>
+          ))
+        }
+
+      </Row>
     )
   }
 }

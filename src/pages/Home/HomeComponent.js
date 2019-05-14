@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'react-bootstrap'
-
+import { Button, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { utilAPI } from '../../utils'
 import {
   Wrapper,
 } from '../../components'
+import { routePaths } from '../../constants'
 
 class HomeComponent extends React.Component {
   render() {
@@ -21,15 +22,18 @@ class HomeComponent extends React.Component {
         // backgroundImage="/charts.jpg"
         blurRate={1.5}
       >
-        <div className="h-100 align-items-center justify-content-center">
-          <Button
-            block
-            variant="outline-primary"
-          >
+        <Row className="h-100 align-items-center justify-content-center">
+          <Link to={routePaths.PORTFOLIO}>
+            <Button
+              block
+              variant="outline-primary"
+            >
           Go to My Portfolio
-          </Button>
-        </div>
-        {utilAPI.redirect(redirectPath, shouldRedirect)}
+            </Button>
+          </Link>
+          {utilAPI.redirect(redirectPath, shouldRedirect)}
+
+        </Row>
       </Wrapper>
     )
   }

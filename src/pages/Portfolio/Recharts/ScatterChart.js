@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts'
+import { Row } from 'react-bootstrap'
 
 const data01 = [
   { x: 100, y: 200, z: 200 },
@@ -29,51 +30,56 @@ const data02 = [
 export default class Example extends PureComponent {
   render() {
     return (
-      <ScatterChart
-        width={500}
-        height={400}
-        margin={{
-          top: 20, right: 20, bottom: 20, left: 20,
-        }}
+      <Row
+        className="justify-content-center align-items-center h-100"
+        style={{ padding: 50 }}
       >
-        <CartesianGrid />
-        <XAxis
-          type="number"
-          dataKey="x"
-          name="stature"
-          unit="cm"
-        />
-        <YAxis
-          yAxisId="left"
-          type="number"
-          dataKey="y"
-          name="weight"
-          unit="kg"
-          stroke="#8884d8"
-        />
-        <YAxis
-          yAxisId="right"
-          type="number"
-          dataKey="y"
-          name="weight"
-          unit="kg"
-          orientation="right"
-          stroke="#82ca9d"
-        />
-        <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-        <Scatter
-          yAxisId="left"
-          name="A school"
-          data={data01}
-          fill="#8884d8"
-        />
-        <Scatter
-          yAxisId="right"
-          name="A school"
-          data={data02}
-          fill="#82ca9d"
-        />
-      </ScatterChart>
+        <ScatterChart
+          width={600}
+          height={500}
+          margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+          }}
+        >
+          <CartesianGrid />
+          <XAxis
+            type="number"
+            dataKey="x"
+            name="stature"
+            unit="cm"
+          />
+          <YAxis
+            yAxisId="left"
+            type="number"
+            dataKey="y"
+            name="weight"
+            unit="kg"
+            stroke="#8884d8"
+          />
+          <YAxis
+            yAxisId="right"
+            type="number"
+            dataKey="y"
+            name="weight"
+            unit="kg"
+            orientation="right"
+            stroke="#82ca9d"
+          />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Scatter
+            yAxisId="left"
+            name="A school"
+            data={data01}
+            fill="#8884d8"
+          />
+          <Scatter
+            yAxisId="right"
+            name="A school"
+            data={data02}
+            fill="#82ca9d"
+          />
+        </ScatterChart>
+      </Row>
     )
   }
 }

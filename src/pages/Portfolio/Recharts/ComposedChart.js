@@ -3,6 +3,7 @@ import {
   ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend,
 } from 'recharts'
+import { Row } from 'react-bootstrap'
 
 const data = [
   {
@@ -26,42 +27,47 @@ const data = [
 ]
 
 export default class Example extends PureComponent {
-
   render() {
     return (
-      <ComposedChart
-        width={500}
-        height={400}
-        data={data}
-        margin={{
-          top: 20, right: 80, bottom: 20, left: 20,
-        }}
+      <Row
+        className="justify-content-center"
+        style={{ padding: 50 }}
       >
-        <CartesianGrid stroke="#f5f5f5" />
-        <XAxis
-          dataKey="name"
-          label={{ value: 'Pages', position: 'insideBottomRight', offset: 0 }}
-        />
-        <YAxis label={{ value: 'Index', angle: -90, position: 'insideLeft' }} />
-        <Tooltip />
-        <Legend />
-        <Area
-          type="monotone"
-          dataKey="amt"
-          fill="#8884d8"
-          stroke="#8884d8"
-        />
-        <Bar
-          dataKey="pv"
-          barSize={20}
-          fill="#413ea0"
-        />
-        <Line
-          type="monotone"
-          dataKey="uv"
-          stroke="#ff7300"
-        />
-      </ComposedChart>
+        <ComposedChart
+          width={600}
+          height={500}
+          data={data}
+          margin={{
+            top: 20, right: 80, bottom: 20, left: 20,
+          }}
+        >
+          <CartesianGrid stroke="#f5f5f5" />
+          <XAxis
+            dataKey="name"
+            label={{ value: 'Pages', position: 'insideBottomRight', offset: 0 }}
+          />
+          <YAxis label={{ value: 'Index', angle: -90, position: 'insideLeft' }} />
+          <Tooltip />
+          <Legend />
+          <Area
+            type="monotone"
+            dataKey="amt"
+            fill="#8884d8"
+            stroke="#8884d8"
+          />
+          <Bar
+            dataKey="pv"
+            barSize={20}
+            fill="#413ea0"
+          />
+          <Line
+            type="monotone"
+            dataKey="uv"
+            stroke="#ff7300"
+          />
+        </ComposedChart>
+      </Row>
+
     )
   }
 }
