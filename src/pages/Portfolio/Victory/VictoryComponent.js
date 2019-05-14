@@ -22,11 +22,14 @@ class VictoryComponent extends React.Component {
 
 
   makeDynamic = () => {
+    this.setState({
+      data: this.getData(),
+    })
     this.setStateInterval = window.setInterval(() => {
       this.setState({
         data: this.getData(),
       })
-    }, 3000)
+    }, 2000)
   }
 
   stopDynamic = () => {

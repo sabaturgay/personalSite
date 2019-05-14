@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+import 'aframe'
+import 'aframe-charts-component'
 
 import { Wrapper, FormInput } from '../../../components'
 import { utilAPI } from '../../../utils'
@@ -22,11 +24,15 @@ class AframeChartsComponent extends React.Component {
         <Scene
           id="scene"
           embedded="true"
+          loading-screen="dotsColor: white; backgroundColor: black"
           // background={`color: rgb(${prominentColor[0]}, ${prominentColor[1]}, ${prominentColor[2]})`}
         >
           {/* <Assets/> */}
           <Camera />
-          <Environment backgroundColor="#756d5b" plane={false}/>
+          <Environment
+            backgroundColor="#756d5b"
+            plane={false}
+          />
           <Entity
             charts="dataPoints: /aframeData.json; type: bar"
             position="0 0 -10"

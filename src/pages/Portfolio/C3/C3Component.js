@@ -1,14 +1,15 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+import * as d3 from 'd3'
+import c3 from 'c3'
+import './c3.css'
 
 import { Wrapper, FormInput } from '../../../components'
 import { utilAPI } from '../../../utils'
 
 class C3Component extends React.Component {
-
   componentDidMount() {
-    const { c3, d3 } = window
     const chart = c3.generate({
       bindto: '#chart',
       data: {
@@ -42,6 +43,10 @@ class C3Component extends React.Component {
         },
       },
     })
+  }
+
+  componentWillUnmount() {
+    console.log('unmount C3Component')
   }
 
   render() {

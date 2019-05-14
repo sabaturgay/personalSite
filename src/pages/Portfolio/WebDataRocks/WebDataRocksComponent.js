@@ -1,6 +1,10 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+import 'webdatarocks/webdatarocks.min.css'
+import 'webdatarocks/webdatarocks.toolbar'
+import 'webdatarocks/webdatarocks'
+
 import { Wrapper, FormInput } from '../../../components'
 import { utilAPI } from '../../../utils'
 

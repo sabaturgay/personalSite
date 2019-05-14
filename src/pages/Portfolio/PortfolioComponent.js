@@ -63,8 +63,12 @@ class PortfolioComponent extends React.Component {
                   ))
                 }
                 <h2>My Sites</h2>
-                <a href="https://tensorflow-memory-box.herokuapp.com/">
-                  <Button>
+                <a
+                  href="https://tensorflow-memory-box.herokuapp.com/"
+                  target="_blank"
+                  style={{ padding: 20 }}
+                >
+                  <Button block>
                     Go My thesis project
                   </Button>
                 </a>
