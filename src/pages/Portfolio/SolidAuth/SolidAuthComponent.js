@@ -1,8 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import { LoggedIn, LoggedOut } from '@solid/react'
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 import Profile from './profile'
 
@@ -10,7 +9,7 @@ class SolidAuthComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick, signin, signout, userData,
+        isLoading, redirectPath, shouldRedirect,
       },
     } = this
 
@@ -18,7 +17,7 @@ class SolidAuthComponent extends React.Component {
       <Wrapper isLoading={isLoading}>
         <h2>Solid Auth</h2>
         {
-          this._renderContent(userData)
+          this._renderContent()
           }
         {utilAPI.redirect(redirectPath, shouldRedirect)}
       </Wrapper>
@@ -28,7 +27,7 @@ class SolidAuthComponent extends React.Component {
   _renderContent = () => {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick, signin, signout, userData,
+        signin, signout, userData,
       },
     } = this
 

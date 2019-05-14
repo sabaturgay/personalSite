@@ -9,7 +9,7 @@ export const WRAPPER_TYPES = {
 }
 const STYLES = [
   {
-    height: '100%', background: 'rgb(52, 61, 70)', paddingRight: 0, paddingLeft: 0,
+    background: 'rgb(52, 61, 70)', paddingRight: 0, paddingLeft: 0,
   },
 ]
 class Wrapper extends React.Component {
@@ -34,7 +34,7 @@ class Wrapper extends React.Component {
           <Container
             style={{ ...STYLES[type], ...style }}
             fluid
-            className="h-100 mh-100"
+            className="h-100"
           >
             {backgroundImage ? (
               <div

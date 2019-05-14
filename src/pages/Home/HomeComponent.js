@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+import { Button } from 'react-bootstrap'
 
-import { utilAPI, authAPI } from '../../utils'
+import { utilAPI } from '../../utils'
 import {
   Wrapper,
 } from '../../components'
@@ -18,10 +18,17 @@ class HomeComponent extends React.Component {
     return (
       <Wrapper
         isLoading={isLoading}
-        backgroundImage="/charts.jpg"
+        // backgroundImage="/charts.jpg"
         blurRate={1.5}
       >
-
+        <div className="h-100 align-items-center justify-content-center">
+          <Button
+            block
+            variant="outline-primary"
+          >
+          Go to My Portfolio
+          </Button>
+        </div>
         {utilAPI.redirect(redirectPath, shouldRedirect)}
       </Wrapper>
     )

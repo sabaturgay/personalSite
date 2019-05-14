@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import 'aframe'
 import 'aframe-charts-component'
 
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 import {
   Entity, Scene, Camera, Environment,
@@ -14,7 +13,7 @@ class AframeChartsComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick,
+        isLoading, redirectPath, shouldRedirect,
       },
     } = this
 

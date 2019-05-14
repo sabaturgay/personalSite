@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Legend,
+} from 'recharts'
 
 const data = [
   {
@@ -25,7 +25,7 @@ const data = [
   {
     name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
   },
-];
+]
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/xqjtetw0/';
@@ -39,11 +39,23 @@ export default class Example extends PureComponent {
           data={data}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval="preserveEnd" />
+          <XAxis
+            dataKey="name"
+            interval="preserveEnd"
+          />
           <YAxis interval="preserveEnd" />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line
+            type="monotone"
+            dataKey="pv"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+          />
+          <Line
+            type="monotone"
+            dataKey="uv"
+            stroke="#82ca9d"
+          />
         </LineChart>
 
         <LineChart
@@ -52,11 +64,23 @@ export default class Example extends PureComponent {
           data={data}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval="preserveStart" />
+          <XAxis
+            dataKey="name"
+            interval="preserveStart"
+          />
           <YAxis interval="preserveStart" />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line
+            type="monotone"
+            dataKey="pv"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+          />
+          <Line
+            type="monotone"
+            dataKey="uv"
+            stroke="#82ca9d"
+          />
         </LineChart>
 
         <LineChart
@@ -65,11 +89,23 @@ export default class Example extends PureComponent {
           data={data}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval="preserveStartEnd" />
+          <XAxis
+            dataKey="name"
+            interval="preserveStartEnd"
+          />
           <YAxis interval="preserveStartEnd" />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line
+            type="monotone"
+            dataKey="pv"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+          />
+          <Line
+            type="monotone"
+            dataKey="uv"
+            stroke="#82ca9d"
+          />
         </LineChart>
 
         <LineChart
@@ -78,13 +114,27 @@ export default class Example extends PureComponent {
           data={data}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" interval={0} angle={30} dx={20} />
+          <XAxis
+            dataKey="name"
+            interval={0}
+            angle={30}
+            dx={20}
+          />
           <YAxis />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line
+            type="monotone"
+            dataKey="pv"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+          />
+          <Line
+            type="monotone"
+            dataKey="uv"
+            stroke="#82ca9d"
+          />
         </LineChart>
       </div>
-    );
+    )
   }
 }

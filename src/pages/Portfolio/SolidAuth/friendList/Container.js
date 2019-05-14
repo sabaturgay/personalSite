@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import FriendList from './FriendList';
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from '@material-ui/core/CircularProgress'
+import FriendList from './FriendList'
 
-export default ({pending, friends}) => (
-    pending ?
-        <CircularProgress/> :
-        <FriendList friends={friends}/>
-);
+export default ({ pending, friends }) => (
+  pending
+    ? <CircularProgress />
+    : <FriendList friends={friends} />
+)

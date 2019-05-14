@@ -17,13 +17,15 @@ class SolidAuth extends React.Component {
   }
 
   signin = async () => {
+    this.setState({ isLoading: true })
     const userData = await solidAuth.popupLogin({ popupUri: 'https://solid.github.io/solid-auth-client/dist/popup.html' })
-    const { webId } = userData
-    this.setState({ userData })
+    this.setState({ userData, isLoading: false })
   }
 
   signout = async () => {
+    this.setState({ isLoading: true })
     await solidAuth.logout()
+    this.setState({ userData: null, isLoading: false })
   }
 
   render() {

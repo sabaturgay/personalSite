@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Tabs, Tab } from 'react-bootstrap'
+import { Tabs, Tab } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { ResponsiveContainer } from 'recharts'
 
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 import LineChart from './LineChart'
 import PieChart from './PieChart'
@@ -26,7 +26,7 @@ class RechartsComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick,
+        isLoading, redirectPath, shouldRedirect,
       },
     } = this
 
@@ -50,7 +50,7 @@ class RechartsComponent extends React.Component {
                   {
                     chart === key && (
                       <ResponsiveContainer
-                        width={700}
+                        width={800}
                         height="80%"
                         key={key}
                       >

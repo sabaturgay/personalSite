@@ -5,7 +5,6 @@ import {
 import PropTypes from 'prop-types'
 
 import { Wrapper } from '../../components'
-import { utilAPI } from '../../utils'
 
 class SigninComponent extends React.Component {
   render() {
@@ -20,8 +19,7 @@ class SigninComponent extends React.Component {
         backgroundImage="https://images.pexels.com/photos/5842/people-vintage-photo-memories.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
       >
         <Row
-          className="justify-content-center align-items-center"
-          style={{ height: '100%' }}
+          className="justify-content-center align-items-center h-100"
         >
           <Col xs={{ span: 6 }}>
             <Card style={{ backgroundColor: 'rgba(0,0,0,0.5)', padding: 20, alignSelf: 'center' }}>

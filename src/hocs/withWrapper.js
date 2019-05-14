@@ -1,5 +1,3 @@
-import React from 'react'
-
 import withStore from './withStore'
 // import withGraphql from './withGraphql'
 // import withLoading from './withLoading'

@@ -1,14 +1,13 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 
 class WebDataRocksComponent extends React.Component {
   componentDidMount() {
     const { WebDataRocks } = window
-    const x = new WebDataRocks({
+    new WebDataRocks({
       container: '#wdr-component',
       toolbar: true,
       report: {
@@ -22,7 +21,7 @@ class WebDataRocksComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick,
+        isLoading, redirectPath, shouldRedirect,
       },
     } = this
 

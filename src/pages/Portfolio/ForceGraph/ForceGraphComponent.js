@@ -1,10 +1,10 @@
 import React from 'react'
-import { Button, Tabs, Tab } from 'react-bootstrap'
+import { Tabs, Tab } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import ForceGraph3D from '3d-force-graph'
 import SpriteText from 'three-spritetext'
 
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 
 const { THREE } = window
@@ -35,7 +35,7 @@ class ForceGraphComponent extends React.Component {
           new THREE.MeshBasicMaterial({ depthWrite: false, transparent: true, opacity: 0 }),
         )
         // add img sprite as child
-        const imgTexture = new THREE.TextureLoader().load(`./img/${img}`)
+        const imgTexture = new THREE.TextureLoader().load(`/img/${img}`)
         const material = new THREE.SpriteMaterial({ map: imgTexture })
         const sprite = new THREE.Sprite(material)
         sprite.scale.set(12, 12)
@@ -47,7 +47,7 @@ class ForceGraphComponent extends React.Component {
 
   loadNodeText = () => {
     const graph = ForceGraph3D()(this.nodeText)
-      .jsonUrl('./forceGraphTextData.json')
+      .jsonUrl('/forceGraphTextData.json')
       .nodeAutoColorBy('group')
       .nodeThreeObject((node) => {
         // use a sphere as a drag handle
@@ -69,7 +69,7 @@ class ForceGraphComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick,
+        isLoading, redirectPath, shouldRedirect,
       },
     } = this
     return (

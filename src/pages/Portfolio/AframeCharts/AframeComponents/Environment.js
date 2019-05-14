@@ -1,12 +1,11 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 class Environment extends React.Component {
   render() {
     const {
       props: {
-        name, backgroundColor, src, plane,
+        backgroundColor, src, plane,
       },
     } = this
 

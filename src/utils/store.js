@@ -1,10 +1,6 @@
 import React from 'react'
-import firebase from 'firebase/app'
 import gql from 'graphql-tag'
 
-import createGraphqlClient from './createGraphqlClient'
-import { storeItemKeys } from '../constants'
-import authAPI from './auth'
 
 /**
  *  @typedef {import('apollo-client').ApolloClient} ApolloClient

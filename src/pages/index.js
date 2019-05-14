@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Route, Switch, Redirect,
+  Switch, Redirect,
 } from 'react-router-dom'
 
 import Signin from './Signin'
@@ -9,11 +9,10 @@ import Home from './Home/index'
 import Profile from './Profile'
 import Portfolio from './Portfolio'
 import {
-  PrivateRoute, NonUserRoute, NavbarDefault, NavbarUser, Footer,
+  PrivateRoute, NonUserRoute, NavbarDefault, NavbarUser,
 } from '../components'
 import { routePaths, storeItemKeys, texts } from '../constants'
 import { withWrapper } from '../hocs'
-import { authAPI } from '../utils'
 
 class BaseRoute extends React.Component {
   render() {
@@ -23,7 +22,10 @@ class BaseRoute extends React.Component {
     } = routePaths
     return (
       <Router>
-        <div style={{ height: '100%' }}>
+        <div
+          className="h-100"
+          style={{ background: 'rgb(52, 61, 70)' }}
+        >
 
           {
           user
@@ -66,11 +68,11 @@ class BaseRoute extends React.Component {
               to={user ? HOME : SIGNIN}
             />
           </Switch>
-          {/* <Footer
+        </div>
+        {/* <Footer
             appName={texts.APP_NAME}
             footerText={texts.FOOTER_TEXT}
           /> */}
-        </div>
       </Router>
     )
   }

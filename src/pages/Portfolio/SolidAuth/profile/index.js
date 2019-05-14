@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import { evaluateExpressions } from '@solid/react';
+import { evaluateExpressions } from '@solid/react'
 
-import ProfileContainer from './Container';
+import ProfileContainer from './Container'
 
-const ProfileEvaluation = evaluateExpressions(['fullName', 'imageSrc'], ProfileContainer);
+const ProfileEvaluation = evaluateExpressions(['fullName', 'imageSrc'], ProfileContainer)
 
-export default ({webId}) => <ProfileEvaluation
+export default ({ webId }) => (
+  <ProfileEvaluation
     webId={webId}
     fullName={`[${webId}].name`}
     imageSrc={`[${webId}].image`}
-/>
+  />
+)

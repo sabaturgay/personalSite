@@ -5,22 +5,16 @@ import {
 } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-import { Wrapper, FormInput } from '../../components'
+import { Wrapper } from '../../components'
 import { utilAPI } from '../../utils'
 import tabs from './tabs'
 
-const path = 'portfolio'
 class PortfolioComponent extends React.Component {
-  state = {
-    selectedTab: 'AframeCharts',
-  }
-
   render() {
     const {
       props: {
         isLoading, redirectPath, shouldRedirect, match: { url },
       },
-      state: { selectedTab },
     } = this
 
     return (
@@ -32,14 +26,13 @@ class PortfolioComponent extends React.Component {
         <Tab.Container
           id="left-tabs-example"
           defaultActiveKey="Victory"
-          onSelect={(key) => { this.setState({ selectedTab: key }) }}
         >
-          <Row className="h-100 mh-100">
+          <Row className="h-100">
 
             <Col
               sm={3}
               style={{ background: 'rgb(47,47,47, 0.9)' }}
-              className="h-100 mh-100"
+              className="h-100"
             >
               <Nav
                 variant="pills"
@@ -71,6 +64,7 @@ class PortfolioComponent extends React.Component {
                 <a
                   href="https://tensorflow-memory-box.herokuapp.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   style={{ padding: 20 }}
                 >
                   <Button block>
@@ -81,9 +75,12 @@ class PortfolioComponent extends React.Component {
             </Col>
             <Col
               sm={9}
-              className="h-100 mh-100"
+              className="h-100"
             >
-              <Tab.Content className="h-100 mh-100">
+              <Tab.Content
+                className="h-100"
+                style={{ padding: 20 }}
+              >
                 <Switch>
                   {
                   Object.keys(tabs).map(topic => Object.keys(tabs[topic]).map((key) => {

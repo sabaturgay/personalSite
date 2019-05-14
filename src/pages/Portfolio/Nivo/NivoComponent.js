@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { generateCountriesData } from '@nivo/generators'
 import { HeatMap } from 'nivo'
 
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 
 const keys = [
@@ -35,13 +34,13 @@ class NivoComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick,
+        isLoading, redirectPath, shouldRedirect,
       },
     } = this
 
     return (
       <Wrapper isLoading={isLoading}>
-          Nivo Example
+        <h2>Nivo</h2>
         <HeatMap
           {...commonProperties}
           tooltip={({

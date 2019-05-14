@@ -1,6 +1,5 @@
 import AframeCharts from './AframeCharts'
 import C3 from './C3'
-import FlexMonster from './FlexMonster'
 import ForceGraph from './ForceGraph'
 import Nivo from './Nivo'
 import Recharts from './Recharts'

@@ -1,13 +1,8 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 class Camera extends React.Component {
   render() {
-    const {
-      props: { name },
-    } = this
-
     return (
       <a-entity
         id="main-camera-wrapper"

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import { evaluateList } from '@solid/react';
+import { evaluateList } from '@solid/react'
 
-import FriendListContainer from './Container';
+import FriendListContainer from './Container'
 
-const FriendListEvaluation = evaluateList('friends', FriendListContainer);
+const FriendListEvaluation = evaluateList('friends', FriendListContainer)
 
-export default ({webId}) => <FriendListEvaluation friends={`[${webId}].knows`} />;
+export default ({ webId }) => <FriendListEvaluation friends={`[${webId}].knows`} />

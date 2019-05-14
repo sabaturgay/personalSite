@@ -6,7 +6,7 @@ import LoadingAnimation from '../assets/anim/noData.json'
 class NoData extends React.Component {
   render() {
     const {
-      props: { text, style },
+      props: { text },
     } = this
 
     return (

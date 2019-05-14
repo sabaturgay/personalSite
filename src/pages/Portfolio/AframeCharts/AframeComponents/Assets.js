@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button, Image } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 class Assets extends React.Component {
@@ -11,7 +10,7 @@ class Assets extends React.Component {
   render() {
     const {
       props: {
-        name, onLoad, data, sounds,
+        onLoad, data,
       },
     } = this
     return (
@@ -27,6 +26,7 @@ class Assets extends React.Component {
                 this.loadedCount += 1
                 this.loadedCount === data.length && onLoad()
               }}
+              alt="assets"
             />
           ))
         }

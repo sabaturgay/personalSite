@@ -5,7 +5,7 @@ import LoadingAnimation from '../assets/anim/loading.json'
 
 class Loader extends React.Component {
   render() {
-    const { props: { progress, loadingText, style } } = this
+    const { props: { progress, loadingText } } = this
 
     return (
       <div

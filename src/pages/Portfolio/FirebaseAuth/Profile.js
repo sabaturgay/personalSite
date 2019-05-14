@@ -1,12 +1,7 @@
 import React from 'react'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
 import { Image } from 'react-bootstrap'
-// import Image from '../SolidAuth/profile/Image'
-
-import styles from '../SolidAuth/profile/Profile.module.css'
 
 export default ({ displayName, photoURL, email }) => (
   <Grid
@@ -18,8 +13,9 @@ export default ({ displayName, photoURL, email }) => (
     style={{ padding: 20 }}
   >
     <Grid
-      // item
+      item
       xs={12}
+      container
       justify="center"
       alignItems="center"
       className="d-flex justify-content-center"
@@ -34,7 +30,7 @@ export default ({ displayName, photoURL, email }) => (
       />
     </Grid>
     <Grid
-      // item
+      item
       xs={12}
     >
       <div className="d-flex justify-content-center"><h2>{displayName}</h2></div>

@@ -2,11 +2,11 @@ import React from 'react'
 import { Button, Tabs, Tab } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import {
-  VictoryChart, VictoryAxis, VictoryBar, VictoryStack, VictoryTheme, VictoryPolarAxis,
+  VictoryChart, VictoryAxis, VictoryBar, VictoryStack, VictoryPolarAxis,
 } from 'victory'
 import math from 'mathjs'
 
-import { Wrapper, FormInput } from '../../../components'
+import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
 import theme from './theme'
 
@@ -46,7 +46,7 @@ class VictoryComponent extends React.Component {
   render() {
     const {
       props: {
-        isLoading, redirectPath, shouldRedirect, onClick,
+        isLoading, redirectPath, shouldRedirect,
       },
       state: {
         dynamic,

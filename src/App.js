@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 
 import { storeAPI, utilAPI } from './utils'
 import BaseRoute from './pages'

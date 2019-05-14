@@ -1,11 +1,10 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 class Scene extends React.Component {
   render() {
     const {
-      props: {  children, ...rest },
+      props: { children, ...rest },
     } = this
 
     return (
