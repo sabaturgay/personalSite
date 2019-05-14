@@ -26,7 +26,7 @@ class PortfolioComponent extends React.Component {
     return (
       <Wrapper
         isLoading={isLoading}
-        backgroundImage="/charts.jpg"
+        // backgroundImage="/charts.jpg"
         blurRate={1.5}
       >
         <Tab.Container

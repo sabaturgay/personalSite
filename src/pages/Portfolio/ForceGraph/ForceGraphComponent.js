@@ -35,7 +35,7 @@ class ForceGraphComponent extends React.Component {
           new THREE.MeshBasicMaterial({ depthWrite: false, transparent: true, opacity: 0 }),
         )
         // add img sprite as child
-        const imgTexture = new THREE.TextureLoader().load(`/img/${img}`)
+        const imgTexture = new THREE.TextureLoader().load(`./img/${img}`)
         const material = new THREE.SpriteMaterial({ map: imgTexture })
         const sprite = new THREE.Sprite(material)
         sprite.scale.set(12, 12)
@@ -47,7 +47,7 @@ class ForceGraphComponent extends React.Component {
 
   loadNodeText = () => {
     const graph = ForceGraph3D()(this.nodeText)
-      .jsonUrl('/forceGraphTextData.json')
+      .jsonUrl('./forceGraphTextData.json')
       .nodeAutoColorBy('group')
       .nodeThreeObject((node) => {
         // use a sphere as a drag handle

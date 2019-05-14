@@ -1,4 +1,5 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/storage'
 
 const storageAPI = {
   put: async (storagePath, file, metaData, progressFunc) => new Promise((resolve, reject) => {
