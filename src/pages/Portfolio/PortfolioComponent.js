@@ -25,7 +25,7 @@ class PortfolioComponent extends React.Component {
       >
         <Tab.Container
           id="left-tabs-example"
-          defaultActiveKey="Victory"
+          // defaultActiveKey="Victory"
         >
           <Row className="h-100">
 

@@ -2,12 +2,32 @@ import React, { PureComponent } from 'react'
 import { PieChart, Pie, Sector } from 'recharts'
 import { Row, Col } from 'react-bootstrap'
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+const dataArray = [
+  [
+    { name: 'Group A', value: 400 },
+    { name: 'Group B', value: 300 },
+    { name: 'Group C', value: 300 },
+    { name: 'Group D', value: 200 },
+  ],
+  [
+    { name: 'Group A', value: 100 },
+    { name: 'Group B', value: 500 },
+    { name: 'Group C', value: 200 },
+    { name: 'Group D', value: 100 },
+  ], [
+    { name: 'Group A', value: 500 },
+    { name: 'Group B', value: 200 },
+    { name: 'Group C', value: 100 },
+    { name: 'Group D', value: 150 },
+  ],
+  [
+    { name: 'Group A', value: 700 },
+    { name: 'Group B', value: 350 },
+    { name: 'Group C', value: 500 },
+    { name: 'Group D', value: 600 },
+  ],
 ]
+
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180
@@ -117,7 +137,8 @@ export default class Example extends PureComponent {
                 <Pie
                   activeIndex={this.state.activeIndex}
                   activeShape={renderActiveShape}
-                  data={data}
+
+                  data={dataArray[index]}
                   cx={200}
                   cy={200}
                   innerRadius={60}
