@@ -1,27 +1,27 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Grid } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
-class className extends React.Component {
+class ComponentName extends React.Component {
   render() {
     const {
-      props: { name },
+      props: { onClick },
     } = this
 
     return (
-      <div>
-        className
-      </div>
+      <Grid>
+        ComponentName
+      </Grid>
     )
   }
 }
 
-className.propTypes = {
-  name: PropTypes.string,
+ComponentName.propTypes = {
+  onClick: PropTypes.func,
 }
-className.defaultProps = {
-  name: 'className',
+ComponentName.defaultProps = {
+  onClick: () => { },
 }
 
 
-export default className
+export default ComponentName
