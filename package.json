@@ -40,7 +40,7 @@
     "filepond-plugin-image-preview": "4.0.8",
     "firebase": "5.9.2",
     "graphiql": "0.13.0",
-    "graphql": "14.2.1",
+    "graphql": "14.3.0",
     "graphql-playground-react": "1.7.20",
     "graphql-request": "1.8.2",
     "graphql-tag": "2.10.1",

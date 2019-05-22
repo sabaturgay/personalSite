@@ -7,16 +7,12 @@ import SolidAuth from './SolidAuth'
 import Victory from './Victory'
 import WebDataRocks from './WebDataRocks'
 import FirebaseAuth from './FirebaseAuth'
-import GraphqlPlayground from './GraphqlPlayground'
 
 export default {
   DataVisualization: {
     C3: {
       Component: C3,
     },
-    // FlexMonster: {
-    //   Component: FlexMonster,
-    // },
     Nivo: {
       Component: Nivo,
     },
@@ -44,10 +40,4 @@ export default {
       Component: FirebaseAuth,
     },
   },
-  DataAccess: {
-    GraphqlPlayGround: {
-      Component: GraphqlPlayground,
-    },
-  },
-
 }

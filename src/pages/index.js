@@ -8,6 +8,8 @@ import Signin from './Signin'
 import Home from './Home/index'
 import Profile from './Profile'
 import Portfolio from './Portfolio'
+import GraphqlPlayground from './GraphqlPlayground'
+
 import {
   PrivateRoute, NonUserRoute, NavbarDefault, NavbarUser,
 } from '../components'
@@ -18,7 +20,7 @@ class BaseRoute extends React.Component {
   render() {
     const { store: { user } } = this.props
     const {
-      SIGNIN, HOME, PROFILE, PORTFOLIO,
+      SIGNIN, HOME, PROFILE, PORTFOLIO, GRAPHQL_PLAYGROUND,
     } = routePaths
     return (
       <Router>
@@ -62,6 +64,10 @@ class BaseRoute extends React.Component {
             <PrivateRoute
               path={PORTFOLIO}
               component={Portfolio}
+            />
+            <PrivateRoute
+              path={GRAPHQL_PLAYGROUND}
+              component={GraphqlPlayground}
             />
             <Redirect
           // from="/"

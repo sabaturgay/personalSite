@@ -61,6 +61,14 @@ class PortfolioComponent extends React.Component {
                 }
 
                 <h2 style={{ paddingLeft: 20 }}>My Sites</h2>
+                <Link
+                  to="/graphqlPlayground"
+                  style={{ padding: 20 }}
+                >
+                  <Button block>
+                    Go to Graphql Playground for RDF
+                  </Button>
+                </Link>
                 <a
                   href="https://tensorflow-memory-box.herokuapp.com/"
                   target="_blank"
@@ -70,6 +78,7 @@ class PortfolioComponent extends React.Component {
                   <Button block>
                     Go My thesis project
                   </Button>
+
                 </a>
               </Nav>
             </Col>
