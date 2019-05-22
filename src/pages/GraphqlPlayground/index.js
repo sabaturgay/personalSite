@@ -19,7 +19,7 @@ function graphQLFetcher(graphQLParams) {
   return new Promise(async (resolve) => {
     const res = await graphqlWithRdf.query(query)
     console.log(res)
-    resolve(res)
+    resolve(res[0])
   })
 }
 
