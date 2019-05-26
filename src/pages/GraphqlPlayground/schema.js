@@ -1,6 +1,6 @@
 import { buildSchema } from 'graphql'
 
-export default buildSchema(`
+const graphqlSchema = `
   type Query {
     user: User
   }
@@ -14,4 +14,6 @@ export default buildSchema(`
     streetAddress: String
     region: String
   }
-`)
+`
+const schema = buildSchema(graphqlSchema)
+export default schema

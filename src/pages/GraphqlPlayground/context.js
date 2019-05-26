@@ -1,3 +1,29 @@
+import _ from 'lodash'
+import schema from './schema'
+
+console.log(schema)
+
+_.forEach(schema.getTypeMap(), (type) => {
+  const { astNode } = type
+  console.log(Object.getPrototypeOf(type))
+  // console.log(_.)
+  // if (astNode) {
+  //   const { kind } = astNode
+  //   switch (kind) {
+  //     case "ObjectTypeDefinition":
+
+  //       break;
+  //     case "ObjectTypeDefinition":
+
+  //       break;
+
+  //     default:
+  //       break;
+  //   }
+  // }
+})
+
+
 export default {
   sources: [{ type: 'file', value: 'https://turgaysaba.solid.community/profile/card' }],
   queryFormat: 'graphql',
