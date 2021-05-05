@@ -67,11 +67,13 @@ class HomeComponent extends React.Component {
     )
   }
 }
+
 HomeComponent.propTypes = {
   isLoading: PropTypes.bool,
   redirectPath: PropTypes.string,
   shouldRedirect: PropTypes.bool,
 }
+
 HomeComponent.defaultProps = {
   isLoading: false,
   redirectPath: '',
