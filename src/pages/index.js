@@ -8,19 +8,18 @@ import Signin from './Signin'
 import Home from './Home/index'
 import Profile from './Profile'
 import Portfolio from './Portfolio'
-import GraphqlPlayground from './GraphqlPlayground'
 
 import {
-  PrivateRoute, NonUserRoute, NavbarDefault, NavbarUser,
+  PrivateRoute,  NavbarDefault, NavbarUser,
 } from '../components'
 import { routePaths, storeItemKeys, texts } from '../constants'
 import { withWrapper } from '../hocs'
 
 class BaseRoute extends React.Component {
   render() {
-    const { store: { user } } = this.props
+    const user = { email: 'turgaysaba@outlook.com', displayName: 'Turgay SABA', photoURL: '/profile.jpeg' }
     const {
-      SIGNIN, HOME, PROFILE, PORTFOLIO, GRAPHQL_PLAYGROUND,
+      SIGNIN, HOME, PROFILE, PORTFOLIO,
     } = routePaths
     return (
       <Router>
@@ -29,28 +28,12 @@ class BaseRoute extends React.Component {
           style={{ background: 'rgb(52, 61, 70)' }}
         >
 
-          {
-          user
-            ? (
-              <NavbarUser
+            <NavbarUser
                 user={user}
                 navItems={[{ name: 'Home', path: HOME }, { name: 'Portfolio', path: PORTFOLIO }]}
                 navButtons={[]}
               />
-            )
-            : (
-              <NavbarDefault
-                appName={texts.APP_NAME}
-                navItems={[{ name: 'Home', path: HOME }, { name: 'Portfolio', path: PORTFOLIO }]}
-              />
-            )
-        }
           <Switch>
-            <NonUserRoute
-              exact
-              path={SIGNIN}
-              component={Signin}
-            />
             <PrivateRoute
               exact
               path={HOME}
@@ -64,10 +47,6 @@ class BaseRoute extends React.Component {
             <PrivateRoute
               path={PORTFOLIO}
               component={Portfolio}
-            />
-            <PrivateRoute
-              path={GRAPHQL_PLAYGROUND}
-              component={GraphqlPlayground}
             />
             <Redirect
           // from="/"

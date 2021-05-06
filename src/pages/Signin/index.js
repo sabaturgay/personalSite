@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { withWrapper } from '../../hocs'
-import { authAPI } from '../../utils'
 import SigninComponent from './SigninComponent'
 
 class Signin extends React.Component {
@@ -15,12 +14,9 @@ class Signin extends React.Component {
     const {
       email, password,
     } = this.state
-    this.setState({ isLoading: true })
-    await authAPI.signin(email, password)
   }
 
   signinWithGoogle = async () => {
-    await authAPI.signinWithProvider()
   }
 
   render() {

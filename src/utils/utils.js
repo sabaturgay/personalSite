@@ -4,36 +4,15 @@ import { toast } from 'react-toastify'
 import uuidv4 from 'uuid/v4'
 import asyncMapSeries from 'async/mapSeries'
 import asyncMap from 'async/map'
-// import firebase from 'firebase/app'
 
-// import createGraphqlClient from './createGraphqlClient'
-// import authAPI from './auth'
-import storeAPI from './store'
-import createTranslator from './i18n/index'
-/**
- *  @typedef {import('i18next').default.TFunction} TFunction
-*/
 
 const utils = {
-  /**
-   * translator
-   * @type {TFunction}
-   */
-  translator: null,
   /**
    * @function
    * router go back
    * @param {React.Component} component
    */
   initializeApp: async (component) => {
-    storeAPI.store = component
-    const store = {}
-    // const user = await authAPI.silentSignin()
-    store.user = { email: 'turgaysaba@outlook.com', displayName: 'Turgay SABA', photoURL: '/profile.jpeg' }
-    // const { data } = await firebase.functions().httpsCallable('getToken')()
-    // storeAPI.graphqlClient = createGraphqlClient(data)
-    utils.translator = await createTranslator()
-    component.setState({ store, isLoading: false })
   },
   /**
    * @function

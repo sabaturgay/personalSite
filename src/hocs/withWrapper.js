@@ -1,6 +1,3 @@
-import withStore from './withStore'
-// import withGraphql from './withGraphql'
-// import withLoading from './withLoading'
 
 /**
  * @function
@@ -11,12 +8,8 @@ import withStore from './withStore'
 *  @return {React.ComponentClass}
  */
 
-// let WithWrapper = withLoading(withStore(HOComponent, wantedStoreKeys))
-// if (gqlOperations) {
-//   WithWrapper = withGraphql(WithWrapper, gqlOperations)
-// }
-// return WithWrapper
-const func = (HOComponent, wantedStoreKeys) => withStore(HOComponent, wantedStoreKeys)
+
+const func = (HOComponent, wantedStoreKeys) => HOComponent 
 
 
 export default func
