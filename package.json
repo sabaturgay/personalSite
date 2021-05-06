@@ -1,10 +1,21 @@
 {
-  "name": "exampleReact",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "10.15.0",
-    "yarn": "1.13.0"
+  "scripts": {
+    "start": "serve -s build",
+    "dev": "react-scripts --max_old_space_size=4096 start",
+    "build": "react-scripts --max_old_space_size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "addEslintPackages": "yarn add eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest -D",
+    "addReactPackages": "yarn add styled-components serve prop-types bootstrap react-router-dom react-bootstrap firebase react-toastify uuid async filepond filepond-plugin-image-exif-orientation filepond-plugin-image-preview react-filepond i18next i18next-browser-languagedetector",
+    "addApolloPackages": "yarn add react-apollo graphql apollo-client apollo-cache-inmemory apollo-link-http apollo-link apollo-link-state apollo-link-error graphql-tag apollo-link-ws subscriptions-transport-ws",
+    "addStoryBookPackages": "yarn add @storybook/addon-actions @storybook/addon-links @storybook/addons @storybook/react @storybook/addon-knobs @storybook/addon-info -D",
+    "storyBookSetup": "npx -p @storybook/cli sb init --type react",
+    "setup": "yarn addEslintPackages && yarn addReactPackages && yarn addApolloPackages && yarn add addStoryBookPackages && yarn dev",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "3d-force-graph": "1.46.3",
@@ -79,21 +90,6 @@
     "victory": "32.2.2",
     "webdatarocks": "1.0.2",
     "ws": "6.2.1"
-  },
-  "scripts": {
-    "start": "serve -s build",
-    "dev": "react-scripts --max_old_space_size=4096 start",
-    "build": "react-scripts --max_old_space_size=4096 build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "addEslintPackages": "yarn add eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest -D",
-    "addReactPackages": "yarn add styled-components serve prop-types bootstrap react-router-dom react-bootstrap firebase react-toastify uuid async filepond filepond-plugin-image-exif-orientation filepond-plugin-image-preview react-filepond i18next i18next-browser-languagedetector",
-    "addApolloPackages": "yarn add react-apollo graphql apollo-client apollo-cache-inmemory apollo-link-http apollo-link apollo-link-state apollo-link-error graphql-tag apollo-link-ws subscriptions-transport-ws",
-    "addStoryBookPackages": "yarn add @storybook/addon-actions @storybook/addon-links @storybook/addons @storybook/react @storybook/addon-knobs @storybook/addon-info -D",
-    "storyBookSetup": "npx -p @storybook/cli sb init --type react",
-    "setup": "yarn addEslintPackages && yarn addReactPackages && yarn addApolloPackages && yarn add addStoryBookPackages && yarn dev",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
