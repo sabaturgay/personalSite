@@ -59,6 +59,37 @@ class PortfolioComponent extends React.Component {
                     </Col>
                   ))
                 }
+                <h2 style={{ paddingLeft: 20 }}>My Sites</h2>
+                <a
+                  href="https://sabaturgay.github.io/resume/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ padding: 20 }}
+                >
+                  <Button block>
+                    Resume
+                  </Button>
+                </a>
+                <a
+                  href="https://next-starter-ibu0ukvcz-sabaturgay.vercel.app/Graph/CaseLawExplorer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ padding: 20 }}
+                >
+                  <Button block>
+                    Perfect Graph
+                  </Button>
+                </a>
+                <a
+                  href="https://sabaturgay.github.io/perfect-graph-docs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ padding: 20 }}
+                >
+                  <Button block>
+                    Perfect Graph Docs
+                  </Button>
+                </a>
               </Nav>
             </Col>
             <Col

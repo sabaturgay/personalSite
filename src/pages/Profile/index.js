@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { routePaths, storeItemKeys } from '../../constants'
+import { routePaths, storeItemKeys, user } from '../../constants'
 import { withWrapper } from '../../hocs'
 
 import ProfileComponent from './ProfileComponent'
@@ -13,9 +13,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    const {
-      props: { store: { user } },
-    } = this
+  
 
     return (
       <ProfileComponent

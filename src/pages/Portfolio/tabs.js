@@ -23,9 +23,9 @@ export default {
     Recharts: {
       Component: Recharts,
     },
-    ForceGraph: {
-      Component: ForceGraph,
-    },
+    // ForceGraph: {
+    //   Component: ForceGraph,
+    // },
   },
   Authentication: {
     SolidAuth: {

@@ -8,13 +8,15 @@ import {
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { user } from '../constants'
 
 const DEFAULT_IMAGE = require('../assets/images/defaultUser.png')
 
 class NavbarUser extends React.Component {
   render() {
+    const { photoURL, displayName, email } = user
     const {
-      props: { user: { photoURL, displayName, email }, navItems, navButtons },
+      props: {  navItems, navButtons },
     } = this
 
     return (

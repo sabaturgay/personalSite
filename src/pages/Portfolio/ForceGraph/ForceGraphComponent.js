@@ -6,8 +6,8 @@ import SpriteText from 'three-spritetext'
 
 import { Wrapper } from '../../../components'
 import { utilAPI } from '../../../utils'
-
-const { THREE } = window
+import * as THREE from 'three'
+// const { THREE } = window
 
 class ForceGraphComponent extends React.Component {
   componentDidMount() {

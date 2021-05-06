@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { withWrapper } from '../../../hocs'
-import { routePaths, storeItemKeys } from '../../../constants'
+import { routePaths, storeItemKeys, user } from '../../../constants'
 
 import NivoComponent from './NivoComponent'
 
@@ -14,9 +14,7 @@ class Nivo extends React.Component {
   }
 
   render() {
-    const {
-      props: { store: { user } },
-    } = this
+    
     return (
       <NivoComponent
         {...this.state}

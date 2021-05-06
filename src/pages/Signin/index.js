@@ -30,7 +30,7 @@ class Signin extends React.Component {
   }
 }
 
-// const { USER } = storeItemKeys
+
 const wantedStoreKeys = []
 
 Signin.defaultProps = {

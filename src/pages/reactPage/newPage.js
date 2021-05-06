@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Wrapper, FormInput } from '../../components'
 import { utilAPI } from '../../utils'
 import { withWrapper } from '../../hocs'
-import { routePaths, storeItemKeys } from '../../constants'
+import { routePaths, storeItemKeys, user } from '../../constants'
 
 class Page extends React.Component {
   state = {
@@ -19,7 +19,6 @@ class Page extends React.Component {
       state: {
         isLoading, redirectPath, shouldRedirect,
       },
-      props: { store: { user } },
     } = this
 
     return (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import solidAuth from 'solid-auth-client'
 
 import { withWrapper } from '../../../hocs'
-import { routePaths, storeItemKeys } from '../../../constants'
+import { routePaths, storeItemKeys, user } from '../../../constants'
 
 import SolidAuthComponent from './SolidAuthComponent'
 
@@ -29,7 +29,7 @@ class SolidAuth extends React.Component {
 
   render() {
     const {
-      props: { store: { user } }, state: { userData },
+       state: { userData },
     } = this
     return (
       <SolidAuthComponent

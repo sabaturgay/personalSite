@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   render() {
-    const { state: { isLoading, store } } = this
+    const { state: { isLoading, } } = this
     if (isLoading) return <Loader />
 
     return (

@@ -12,12 +12,11 @@ import Portfolio from './Portfolio'
 import {
   PrivateRoute,  NavbarDefault, NavbarUser,
 } from '../components'
-import { routePaths, storeItemKeys, texts } from '../constants'
+import { routePaths, storeItemKeys, texts,user } from '../constants'
 import { withWrapper } from '../hocs'
 
 class BaseRoute extends React.Component {
   render() {
-    const user = { email: 'turgaysaba@outlook.com', displayName: 'Turgay SABA', photoURL: '/profile.jpeg' }
     const {
       SIGNIN, HOME, PROFILE, PORTFOLIO,
     } = routePaths
