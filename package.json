@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sabaturgay.github.io/personalSite/",
   "scripts": {
     "start": "serve -s build",
     "dev": "react-scripts --max_old_space_size=4096 start",
