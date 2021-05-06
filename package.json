@@ -7,16 +7,7 @@
     "start": "serve -s build",
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "addEslintPackages": "yarn add eslint-config-airbnb@latest eslint-plugin-import@latest eslint-plugin-jsx-a11y@latest eslint-plugin-react@latest -D",
-    "addReactPackages": "yarn add styled-components serve prop-types bootstrap react-router-dom react-bootstrap firebase react-toastify uuid async filepond filepond-plugin-image-exif-orientation filepond-plugin-image-preview react-filepond i18next i18next-browser-languagedetector",
-    "addApolloPackages": "yarn add react-apollo graphql apollo-client apollo-cache-inmemory apollo-link-http apollo-link apollo-link-state apollo-link-error graphql-tag apollo-link-ws subscriptions-transport-ws",
-    "addStoryBookPackages": "yarn add @storybook/addon-actions @storybook/addon-links @storybook/addons @storybook/react @storybook/addon-knobs @storybook/addon-info -D",
-    "storyBookSetup": "npx -p @storybook/cli sb init --type react",
-    "setup": "yarn addEslintPackages && yarn addReactPackages && yarn addApolloPackages && yarn add addStoryBookPackages && yarn dev",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "react-scripts test"
   },
   "dependencies": {
     "3d-force-graph": "1.46.3",
@@ -92,15 +83,6 @@
     "webdatarocks": "1.0.2",
     "ws": "6.2.1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
     "@storybook/addon-info": "5.0.11",
     "@storybook/addon-knobs": "5.0.11",
