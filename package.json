@@ -71,6 +71,7 @@
     "sparqlalgebrajs": "1.5.2",
     "styled-components": "4.2.0",
     "subscriptions-transport-ws": "0.9.16",
+    "three": "0.128.0",
     "three-spritetext": "1.0.6",
     "uuid": "3.3.2",
     "victory": "32.2.2",
