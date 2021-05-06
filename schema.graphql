@@ -1,0 +1,7 @@
+type User{
+  name: String!
+  address: {
+    streetAddress: String!
+    region: String!
+  }
+}

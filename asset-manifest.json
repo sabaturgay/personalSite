@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/personalSite/static/css/main.a9c3ab8d.chunk.css",
+    "main.js": "/personalSite/static/js/main.9d440176.chunk.js",
+    "main.js.map": "/personalSite/static/js/main.9d440176.chunk.js.map",
+    "runtime-main.js": "/personalSite/static/js/runtime-main.6364fb43.js",
+    "runtime-main.js.map": "/personalSite/static/js/runtime-main.6364fb43.js.map",
+    "static/css/2.d53f93a1.chunk.css": "/personalSite/static/css/2.d53f93a1.chunk.css",
+    "static/js/2.b73b8279.chunk.js": "/personalSite/static/js/2.b73b8279.chunk.js",
+    "static/js/2.b73b8279.chunk.js.map": "/personalSite/static/js/2.b73b8279.chunk.js.map",
+    "index.html": "/personalSite/index.html",
+    "static/css/2.d53f93a1.chunk.css.map": "/personalSite/static/css/2.d53f93a1.chunk.css.map",
+    "static/css/main.a9c3ab8d.chunk.css.map": "/personalSite/static/css/main.a9c3ab8d.chunk.css.map",
+    "static/js/2.b73b8279.chunk.js.LICENSE.txt": "/personalSite/static/js/2.b73b8279.chunk.js.LICENSE.txt",
+    "static/media/collaborativeWorking.03360565.png": "/personalSite/static/media/collaborativeWorking.03360565.png",
+    "static/media/continuousDeployment.9b2c403e.png": "/personalSite/static/media/continuousDeployment.9b2c403e.png",
+    "static/media/crossPlatform.5430d128.png": "/personalSite/static/media/crossPlatform.5430d128.png",
+    "static/media/fastPrototyping.cea0252a.png": "/personalSite/static/media/fastPrototyping.cea0252a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6364fb43.js",
+    "static/css/2.d53f93a1.chunk.css",
+    "static/js/2.b73b8279.chunk.js",
+    "static/css/main.a9c3ab8d.chunk.css",
+    "static/js/main.9d440176.chunk.js"
+  ]
+}
