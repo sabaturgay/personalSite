@@ -1,6 +1,6 @@
 export default {
-  HOME: '/home',
-  SIGNIN: '/signin',
-  PROFILE: '/profile',
-  PORTFOLIO: '/portfolio',
+  HOME: '/personalSite/home',
+  SIGNIN: '/personalSite/signin',
+  PROFILE: '/personalSite/profile',
+  PORTFOLIO: '/personalSite/portfolio',
 }
