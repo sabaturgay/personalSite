@@ -49,7 +49,7 @@ class BaseRoute extends React.Component {
             />
             <Redirect
           // from="/"
-              to={user ? HOME : SIGNIN}
+              to={user ? PORTFOLIO : SIGNIN}
             />
           </Switch>
         </div>
